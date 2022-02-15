@@ -2,19 +2,394 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
     <title>Mayguard | Dashboard</title>
 </head>
 
 <body>
+    <div class="grid-container">
+        <nav class="padding-x container nav nav--position">
+            <div class="overlay"></div>
+            <div class="nav__controls">
+                <div class="nav__logo">
+                    <a href="index.html"><img src="./Mayguard assets/icons/brandLogoLight.png" alt="Maygaurd" /></a>
+                </div>
+                <div class="nav__btn--toggle hide-desktop">
+                    <a id="hamburger" href="#" class="nav--toggle-open "><img class="btn--hamburger" src="./Mayguard assets/icons/Hamburger_menu.svg" alt="hamburger-menu" /></a>
+                    <a id="close" class="nav--toggle-close" href="#"><img class="btn--close" src="./Mayguard assets/icons/Hamburger_menu--close.svg" alt="hamburger-close" /></a>
 
-    <script src="./app.js"></script>
+                </div>
+
+            </div>
+            <div id="sidebar" class="sidebar__nav--links">
+                <div class="sidebar__nav hide-mobile">
+                    <a href="#dashboard" class="sidebar__link font-bold">
+                        <img src="./Mayguard assets/icons/Category--dashboard.svg" alt="dashboard" class="sidebar__link--icon"> Dashboard
+                    </a>
+                    <a href="#" class="sidebar__link font-bold">
+                        <img src="./Mayguard assets/icons/Activity--alert.svg" alt="alerts" class="sidebar__link--icon"> Alerts
+                    </a>
+                    <a href="#" class="sidebar__link font-bold">
+                        <img src="./Mayguard assets/icons/Swap--api.svg" alt="api calls" class="sidebar__link--icon"> API Calls</a>
+                    <a href="#" class="sidebar__link font-bold">
+                        <img src="./Mayguard assets/icons/Filter--rules.svg" alt="rules" class="sidebar__link--icon"> Rules
+                    </a>
+                    <a href="#" class="sidebar__link font-bold">
+                        <img src="./Mayguard assets/icons/Paper--doc.svg" alt="documentation" class="sidebar__link--icon"> Documentation
+                    </a>
+                </div>
+                <div class="d-flex--fe hide-mobile">
+                    <!--Review-->
+                    <div class="profile__block ">
+                        <div class="profile--icon-bg font-bold">C</div>
+
+                        <div class="profile__details color-f5">
+                            <p class="font-bold ">Carbon</p>
+                            <p class="profile--username">Rotimi Amaechi</p>
+                        </div>
+                        <a href="#" class="profile--icon-link"><img src="./Mayguard assets/icons/Outline.svg" alt="outline" class="profile--icon"></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <header id="dashboard" class="header container padding-x margin-t">
+
+            <label class="header__label">
+            <h1 class="header__heading color-21">Dashboard</h1>
+        </label>
+            <div class="header__form">
+                <form class="form">
+                    <select class="form__option color-75 font-size-14">
+                        <option value="All" selected>All</option>
+                    </select>
+                    <div class="form__input-container">
+                        <input type="text" placeholder="Enter email, phone number or BVN" class="form__input font-size-14" required>
+                    </div>
+                    <button class="form__button color-75 font-size-14 font-bold">GO</button>
+                </form>
+            </div>
+        </header>
+
+        <section class="stat__section padding-x container">
+            <div class="stat__header">
+                <h3 class="stat__heading font-bold color-21"> api calls overview</h3>
+                <div class="stat__heading--date">
+                    <a href="#" class="stat__icon--link font-size-14 color-75 font-bold"><img src="./Mayguard assets/icons/Outline--calender.svg" alt="calender" class="stat__icon">7 Days</a>
+                </div>
+            </div>
+            <div class="stat_row d-flex-center">
+
+                <div class="stat--state stat__bg--safe  d-flex-center">
+                    <div class="state__icon--wrapper d-flex-center">
+                        <img src="./Mayguard assets/icons/ShieldCheck--safe.svg" alt="safe" class="stat__shieldicon">
+                    </div>
+                    <div class="stat__details color-white d-flex">
+                        <p class="font-size-16 stat__detail--title">Safe</p>
+                        <p class="font-bold font-size-32 stat__detail--title">202</p>
+                    </div>
+                    <div class="stat--target d-flex">
+                        <img src="./Mayguard assets/icons/Vector--target.svg" alt="" class="stat__icon--target">
+                    </div>
+                </div>
+                <div class="stat--state stat__bg--warning  d-flex-center stat_state-mx">
+                    <div class="state__icon--wrapper d-flex-center">
+                        <img src="./Mayguard assets/icons/ShieldWarning--warning.svg" alt="warning" class="stat__shieldicon">
+                    </div>
+                    <div class="stat__details color-white d-flex">
+                        <p class="font-size-16 stat__detail--title">Suspicious</p>
+                        <p class="font-bold font-size-32 stat__detail--title">103</p>
+                    </div>
+                    <div class="stat--target d-flex">
+                        <img src="./Mayguard assets/icons/Vector--target.svg" alt="" class="stat__icon--target">
+                    </div>
+                </div>
+                <div class="stat--state stat__bg--danger  d-flex-center">
+                    <div class="state__icon--wrapper d-flex-center">
+                        <img src="./Mayguard assets/icons/ShieldSlash--fraud.svg" alt="danger" class="stat__shieldicon">
+                    </div>
+                    <div class="stat__details color-white d-flex">
+                        <p class="font-size-16 stat__detail--title">Fraudulent</p>
+                        <p class="font-bold font-size-32 stat__detail--title">53</p>
+                    </div>
+                    <div class="stat--target d-flex">
+                        <img src="./Mayguard assets/icons/Vector--target.svg" alt="" class="stat__icon--target">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="section__card  margin-y d-flex">
+            <div class="card__intro color-f5 padding-x d-flex">
+                <p class="card__heading font-bold font-size-16">Quick Risk Check</p>
+                <p class="card_description font-size-14">Get a comprehensive fraud risk report on your leads in minutes.</p>
+            </div>
+            <div class="card__search-section padding-x">
+                <div class="search__header d-flex">
+                    <h3 class="search--heading font-bold color-21 margin-y">check here</h3>
+                    <div class="search__icons">
+                        <a href="#" class="search__icon--link"><img src="Vectorphone.png" alt="phone" class="search__icon"></a>
+                        <a href="#" class="search__icon--link"><img src="Vectorglobe.png" alt="globe" class="search__icon"></a>
+                        <a href="#" class="search__icon--link"><img src="Vectormail.svg" alt="email" class="search__icon"></a>
+                        <a href="#" class="search__icon--link"><img src="Vectoridcard.png" alt="ID card" class="search__icon"></a>
+                    </div>
+                </div>
+                <form class="search__form ">
+                    <input type="text" class="search__form--input  font-size-14 color-75" placeholder="Email, IP, Phone number or BVN" required>
+                    <button type="submit" class="search__form--btn font-size-14 font-bold color-FA">run risk check</button>
+                </form>
+            </div>
+
+        </section>
+        <section class="section__notification d-flex">
+            <div class="notification__header margin-y padding-x">
+                <h3 class="notification__heading font-bold color-21">Recent notification</h3>
+                <p class="notification--timeline color-75">From Apr 28 to May 4</p>
+            </div>
+            <div class="notification--details padding-x">
+                <div class="notification--item d-flex">
+                    <div class="noti__link-container d-flex d-flex-center">
+                        <a href="#" class="noti__item--link"><img src="./Mayguard assets/icons/Phone--solid.svg" alt="phone" class="noti__icon"></a>
+                    </div>
+                    <div class="noti__info--wrapper d-flex">
+                        <div class="noti_item--info">
+                            <p class="color-21 font-size-14">+2348065538878</p>
+                            <p class="color-75 font-size-12">28th Apr, 2021 12:48 PM</p>
+
+                        </div>
+                        <div class="noti__item__status">
+                            <div class="noti_status--info  d-flex-lg ">
+                                <p class="color-warning font-size-14">(65%)</p>
+                                <p class="color-75 font-size-12">Suspicious</p>
+                            </div>
+                            <div class="noti__item--progressbar d-none-mobile">
+                                <div class="noti--bar-warning"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="noti__link-container d-flex link--bg d-flex-center">
+                        <a href="#" class="noti_status--link"><img src="./Mayguard assets/icons/more-vertical.svg" alt="more details"></a>
+
+                    </div>
+                </div>
+
+                <div class="notification--item d-flex">
+                    <div class="noti__link-container d-flex d-flex-center">
+                        <a href="#" class="noti__item--link"><img src="./Mayguard assets/icons/Globe--solid.svg" alt="globe" class="noti__icon"></a>
+                    </div>
+                    <div class="noti__info--wrapper d-flex">
+                        <div class="noti_item--info">
+                            <p class="color-21 font-size-14">187.26.1.212</p>
+                            <p class="color-75 font-size-12">28th Apr, 2021 12:48 PM</p>
+
+                        </div>
+                        <div class="noti__item__status">
+                            <div class="noti_status--info d-flex-lg">
+                                <p class="color-danger font-size-14">(88%)</p>
+                                <p class="color-75 font-size-12">Fraudulent</p>
+                            </div>
+                            <div class="noti__item--progressbar d-none-mobile">
+                                <div class="noti--bar-danger"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="noti__link-container d-flex link--bg d-flex-center">
+                        <a href="#" class="noti_status--link"><img src="./Mayguard assets/icons/more-vertical.svg" alt="more details"></a>
+
+                    </div>
+                </div>
+                <div class="notification--item d-flex">
+                    <div class="noti__link-container d-flex d-flex-center">
+                        <a href="#" class="noti__item--link"><img src="./Mayguard assets/icons/EnvelopeSimpleOpen--solid.svg" alt="" class="noti__icon"></a>
+
+                    </div>
+                    <div class="noti__info--wrapper d-flex">
+                        <div class="noti_item--info">
+                            <p class="color-21 font-size-14">anand_writes@qa.team</p>
+                            <p class="color-75 font-size-12">28th Apr, 2021 12:48 PM</p>
+
+                        </div>
+                        <div class="noti__item__status">
+                            <div class="noti_status--info d-flex-lg">
+                                <p class="color-danger font-size-14">(78%)</p>
+                                <p class="color-75 font-size-12">Fraudulent</p>
+                            </div>
+                            <div class="noti__item--progressbar d-none-mobile">
+                                <div class="noti--bar-danger"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="noti__link-container d-flex link--bg d-flex-center">
+                        <a href="#" class="noti_status--link"><img src="./Mayguard assets/icons/more-vertical.svg" alt="more details"></a>
+
+                    </div>
+                </div>
+                <div class="notification--item d-flex">
+                    <div class="noti__link-container d-flex d-flex-center">
+                        <a href="#" class="noti__item--link"><img src="./Mayguard assets/icons/IdentificationCard--solid.svg" alt="" class="noti__icon"></a>
+
+                    </div>
+                    <div class="noti__info--wrapper d-flex">
+                        <div class="noti_item--info">
+                            <p class="color-21 font-size-14">22117889689</p>
+                            <p class="color-75 font-size-12">28th Apr, 2021 12:48 PM</p>
+
+                        </div>
+                        <div class="noti__item__status">
+                            <div class="noti_status--info d-flex-lg">
+                                <p class="color-safe font-size-14">(8%)</p>
+                                <p class="color-75 font-size-12">Safe</p>
+                            </div>
+                            <div class="noti__item--progressbar d-none-mobile">
+                                <div class="noti--bar-safe"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="noti__link-container d-flex link--bg d-flex-center">
+                        <a href="#" class="noti_status--link"><img src="./Mayguard assets/icons/more-vertical.svg" alt="more details"></a>
+
+                    </div>
+                </div>
+                <div class="notification--item d-flex">
+                    <div class="noti__link-container d-flex d-flex-center">
+                        <a href="#" class="noti__item--link"><img src="./Mayguard assets/icons/Phone--solid.svg" alt="phone" class="noti__icon"></a>
+
+                    </div>
+                    <div class="noti__info--wrapper d-flex">
+                        <div class="noti_item--info">
+                            <p class="color-21 font-size-14">+2348065538878</p>
+                            <p class="color-75 font-size-12">28th Apr, 2021 12:48 PM</p>
+
+                        </div>
+                        <div class="noti__item__status">
+                            <div class="noti_status--info d-flex-lg">
+                                <p class="color-warning font-size-14">(65%)</p>
+                                <p class="color-75 font-size-12">Suspicious</p>
+                            </div>
+                            <div class="noti__item--progressbar d-none-mobile">
+                                <div class="noti--bar-warning"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="noti__link-container d-flex link--bg d-flex-center">
+                        <a href="#" class="noti_status--link"><img src="./Mayguard assets/icons/more-vertical.svg" alt="more details"></a>
+
+                    </div>
+                </div>
+
+                <div class="notification--item d-flex">
+                    <div class="noti__link-container d-flex d-flex-center">
+                        <a href="#" class="noti__item--link"><img src="./Mayguard assets/icons/Globe--solid.svg" alt="globe" class="noti__icon"></a>
+
+                    </div>
+                    <div class="noti__info--wrapper d-flex">
+                        <div class="noti_item--info">
+                            <p class="color-21 font-size-14">187.26.1.212</p>
+                            <p class="color-75 font-size-12">28th Apr, 2021 12:48 PM</p>
+
+                        </div>
+                        <div class="noti__item__status">
+                            <div class="noti_status--info d-flex-lg">
+                                <p class="color-danger font-size-14">(88%)</p>
+                                <p class="color-75 font-size-12">Fraudulent</p>
+                            </div>
+                            <div class="noti__item--progressbar d-none-mobile">
+                                <div class="noti--bar-danger"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="noti__link-container d-flex link--bg d-flex-center">
+                        <a href="#" class="noti_status--link"><img src="./Mayguard assets/icons/more-vertical.svg" alt="more details"></a>
+
+                    </div>
+                </div>
+                <div class="notification--item d-flex">
+                    <div class="noti__link-container d-flex d-flex-center">
+                        <a href="#" class="noti__item--link"><img src="./Mayguard assets/icons/EnvelopeSimpleOpen--solid.svg" alt="" class="noti__icon"></a>
+
+                    </div>
+                    <div class="noti__info--wrapper d-flex">
+                        <div class="noti_item--info">
+                            <p class="color-21 font-size-14">anand_writes@qa.team</p>
+                            <p class="color-75 font-size-12">28th Apr, 2021 12:48 PM</p>
+
+                        </div>
+                        <div class="noti__item__status">
+                            <div class="noti_status--info d-flex-lg">
+                                <p class="color-danger font-size-14">(78%)</p>
+                                <p class="color-75 font-size-12">Fraudulent</p>
+                            </div>
+                            <div class="noti__item--progressbar d-none-mobile">
+                                <div class="noti--bar-danger"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="noti__link-container d-flex link--bg d-flex-center">
+                        <a href="#" class="noti_status--link"><img src="./Mayguard assets/icons/more-vertical.svg" alt="more details"></a>
+
+                    </div>
+                </div>
+                <div class="notification--item d-flex">
+                    <div class="noti__link-container d-flex d-flex-center">
+                        <a href="#" class="noti__item--link"><img src="./Mayguard assets/icons/IdentificationCard--solid.svg" alt="" class="noti__icon"></a>
+
+                    </div>
+                    <div class="noti__info--wrapper d-flex">
+                        <div class="noti_item--info">
+                            <p class="color-21 font-size-14">22117889689</p>
+                            <p class="color-75 font-size-12">28th Apr, 2021 12:48 PM</p>
+
+                        </div>
+                        <div class="noti__item__status">
+                            <div class="noti_status--info d-flex-lg">
+                                <p class="color-safe font-size-14">(8%)</p>
+                                <p class="color-75 font-size-12">Safe</p>
+                            </div>
+                            <div class="noti__item--progressbar d-none-mobile">
+                                <div class="noti--bar-safe"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="noti__link-container d-flex link--bg d-flex-center">
+                        <a href="#" class="noti_status--link"><img src="./Mayguard assets/icons/more-vertical.svg" alt="more details"></a>
+
+                    </div>
+
+                </div>
+                <div class="noti--extra-details d-flex">
+                    <p class="color-75 font-bold font-size-14">see all</p>
+                    <a href="#" class="extra--link"><img src="./Mayguard assets/icons/Vector--rightarrow.svg" alt="arrow"></a>
+                </div>
+
+
+            </div>
+        </section>
+    </div>
+    <script src="./app.js "></script>
 </body>
 
 </html>

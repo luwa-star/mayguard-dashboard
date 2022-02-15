@@ -773,11 +773,15 @@ body {
 
 @media only screen and (min-width: 1400px) {
     /*HEADER SECTION*/
-    .header {
-        width: 70rem;
-    }
     .section__card {
-        margin-right: 2.8rem;
+        margin-right: 3rem;
+    }
+}
+
+@media only screen and (min-width: 1490px) {
+    /*HEADER SECTION*/
+    .section__card {
+        margin-right: 7rem;
     }
 }
 
